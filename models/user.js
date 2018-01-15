@@ -18,7 +18,7 @@ var UserSchema = new Schema({
         type: String,
         required: true,
     },
-}, {timestamps: true});
+}, {timestamps: {createdAt: 'createdAt', updatedAt: 'updatedAt'}});
 
 UserSchema.pre('save', function(next, done){
     var user = this;

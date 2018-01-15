@@ -16,7 +16,7 @@ var SurveyAnswerSchema = new Schema({
     schedule: [[{
         type: Number,
     }]],
-})
+}, {timestamps: true})
 
 var SurveySchema = new Schema({
     user: {
@@ -33,6 +33,6 @@ var SurveySchema = new Schema({
         required: false,
     },
     answers: [SurveyAnswerSchema],
-});
+}, {timestamps: {createdAt: 'createdAt', updatedAt: 'updatedAt'}});
 
 const Survey = mongoose.model('Survey', SurveySchema);
